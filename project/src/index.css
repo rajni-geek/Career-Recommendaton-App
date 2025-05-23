@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #f0f7ff;
+  --primary-100: #e0eefd;
+  --primary-200: #baddff;
+  --primary-300: #84c5fe;
+  --primary-400: #48a4fc;
+  --primary-500: #1a85fb;
+  --primary-600: #0a66c2;
+  --primary-700: #0a57a4;
+  --primary-800: #0e4a85;
+  --primary-900: #0f3f6e;
+  --primary-950: #0a2847;
+  
+  --secondary-50: #fdf7e9;
+  --secondary-100: #faebca;
+  --secondary-200: #f6d692;
+  --secondary-300: #f1be58;
+  --secondary-400: #eead35;
+  --secondary-500: #e7a33e;
+  --secondary-600: #d08823;
+  --secondary-700: #ad6a1d;
+  --secondary-800: #8d541d;
+  --secondary-900: #74451c;
+  --secondary-950: #432310;
+}
+
+@layer base {
+  body {
+    @apply text-gray-800 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .text-primary-50 { color: var(--primary-50); }
+  .text-primary-100 { color: var(--primary-100); }
+  .text-primary-200 { color: var(--primary-200); }
+  .text-primary-300 { color: var(--primary-300); }
+  .text-primary-400 { color: var(--primary-400); }
+  .text-primary-500 { color: var(--primary-500); }
+  .text-primary-600 { color: var(--primary-600); }
+  .text-primary-700 { color: var(--primary-700); }
+  .text-primary-800 { color: var(--primary-800); }
+  .text-primary-900 { color: var(--primary-900); }
+  .text-primary-950 { color: var(--primary-950); }
+  
+  .bg-primary-50 { background-color: var(--primary-50); }
+  .bg-primary-100 { background-color: var(--primary-100); }
+  .bg-primary-200 { background-color: var(--primary-200); }
+  .bg-primary-300 { background-color: var(--primary-300); }
+  .bg-primary-400 { background-color: var(--primary-400); }
+  .bg-primary-500 { background-color: var(--primary-500); }
+  .bg-primary-600 { background-color: var(--primary-600); }
+  .bg-primary-700 { background-color: var(--primary-700); }
+  .bg-primary-800 { background-color: var(--primary-800); }
+  .bg-primary-900 { background-color: var(--primary-900); }
+  .bg-primary-950 { background-color: var(--primary-950); }
+  
+  .text-secondary-500 { color: var(--secondary-500); }
+  .bg-secondary-500 { background-color: var(--secondary-500); }
+}
