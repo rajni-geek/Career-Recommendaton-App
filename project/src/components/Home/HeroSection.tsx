@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = (target: string) => {
+    // Redirect to signup page with a destination path
+    navigate('/signup', { state: { target } });
+  };
+
   return (
     <section className="relative bg-gradient-to-r from-primary-900 to-primary-700 text-white py-32 overflow-hidden">
       {/* Decorative shapes */}
@@ -22,19 +29,19 @@ const HeroSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in delay-200">
-            <Link
-              to="/assessment"
+            <button
+              onClick={() => handleRedirect('/assessment')}
               className="bg-white text-primary-700 font-medium py-3 px-6 rounded-lg hover:bg-primary-50 transition-colors duration-300 flex items-center justify-center sm:justify-start shadow-lg hover:shadow-xl"
             >
               Start Assessment
               <ArrowRight size={20} className="ml-2" />
-            </Link>
-            <Link
-              to="/careers"
+            </button>
+            <button
+              onClick={() => handleRedirect('/careers')}
               className="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-lg hover:bg-white/10 transition-colors duration-300 flex items-center justify-center sm:justify-start"
             >
               Explore Careers
-            </Link>
+            </button>
           </div>
         </div>
       </div>
